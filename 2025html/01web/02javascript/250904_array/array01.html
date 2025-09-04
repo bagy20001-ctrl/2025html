@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var city = ['서울', '부산', '대구', '인천', '광주'];
+
+      document.write('<ul>');
+      for (var i = 0; i < city.length; i = i + 1) {
+        // document.write(i);
+        document.write('<li>');
+        document.write(city[i]);
+        document.write('</li>');
+      }
+      document.write('</ul>');
+    </script>
+
+    <script>
+      var listHtml = '<ul>';
+      for (var i = 0; i < city.length; i++) {
+        listHtml += '<li>';
+        listHtml += city[i];
+        listHtml += '</li>';
+      }
+      listHtml += '</ul>';
+      document.write(listHtml);
+    </script>
+  </body>
+</html>

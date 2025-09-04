@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      .menuWrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1000px;
+        margin: 0 auto;
+      }
+      .menuWrap ul {
+        display: flex;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menuWrap">
+      <h1>로고</h1>
+      <ul id="menu">
+        메인메뉴
+      </ul>
+    </div>
+
+    <script>
+      var mainMenu = ['home', 'company', 'product', 'community'];
+      var menuLink = [
+        'www.naver.com',
+        'www.daum.net',
+        'www.korea.com',
+        'www.dbcut.com',
+      ];
+
+      var menuHtml = '';
+      //   for (var i = 0; i < mainMenu.length; i++) {
+      //     menuHtml += '<li>';
+      //     menuHtml +=
+      //       "<a href='http://" + menuLink[i] + "'>" + mainMenu[i] + '</a>';
+      //     menuHtml += '</li>';
+      //   }
+
+      for (var i = 0; i < mainMenu.length; i++) {
+        menuHtml += `
+                    <li>
+                        <a href="http://${menuLink[i]}">${mainMenu[i]}</a>
+                    </li>
+                    `;
+      }
+
+      document.getElementById('menu').innerHTML = menuHtml;
+
+      var array1 = [];
+    </script>
+  </body>
+</html>

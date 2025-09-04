@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+
+      .header {
+        background: skyblue;
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        align-items: center;
+      }
+
+      div.header > h1 {
+        background: pink;
+      }
+      .header > .menu {
+        background: yellow;
+      }
+      .header > .util {
+        background: red;
+      }
+
+      .menu ul {
+        display: flex;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>logo</h1>
+      <div class="menu">
+        <ul>
+          <li>company</li>
+          <li>product</li>
+          <li>online</li>
+          <li>community</li>
+        </ul>
+      </div>
+      <div class="util">util</div>
+    </div>
+  </body>
+</html>
