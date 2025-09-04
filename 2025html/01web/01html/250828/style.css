@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h1 {
+  color: gray;
+}
+h1:hover {
+  background: blue;
+  color: white;
+}
+
+ul.menu li:first-child {
+  background: skyblue;
+}
+ul.menu li:last-child {
+  background: pink;
+}
+
+div.boxWrap div:nth-child(2n) {
+  background: red;
+}
+div.boxWrap div:nth-child(2n + 1) {
+  background: blue;
+}

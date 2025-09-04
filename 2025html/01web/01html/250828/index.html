@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* *, tag, class, id */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        background: cyan;
+      }
+      p:hover {
+        background: skyblue;
+      }
+      /* a:visited {
+        color: black;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- h$*6>{제목 글씨 h$} -->
+    <h1>제목 글씨 h1</h1>
+    <h2>제목 글씨 h2</h2>
+    <h3>제목 글씨 h3</h3>
+    <h4>제목 글씨 h4</h4>
+    <h5>제목 글씨 h5</h5>
+    <h6>제목 글씨 h6</h6>
+    <p>
+      Lorem ipsum dolor sit <br />amet consectetur adipisicing elit. Aperiam
+      possimus consequatur fugiat iste quibusdam impedit debitis atque,
+      reprehenderit sit voluptatum fuga repellendus architecto a nesciunt
+      mollitia temporibus, illum iusto similique?
+    </p>
+    <p>Lorem, ipsum dolor.</p>
+    <a href="https://search.naver.com/search.naver?query=자동차"
+      >네이버 자동차 검색</a
+    >
+
+    <a href="#p1">이동1</a>
+    <a href="#p2">이동2</a>
+    <a href="#p3">이동3</a>
+    <p id="p1">
+      1Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+      iusto temporibus accusamus ipsum a voluptatum cumque dolorem tempore
+      ducimus tempora, consectetur, necessitatibus recusandae saepe alias?
+      Libero esse atque eveniet sequi!
+    </p>
+    <p id="p2">
+      2Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+      iusto temporibus accusamus ipsum a voluptatum cumque dolorem tempore
+      ducimus tempora, consectetur, necessitatibus recusandae saepe alias?
+      Libero esse atque eveniet sequi!
+    </p>
+    <p id="p3">
+      3Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+      iusto temporibus accusamus ipsum a voluptatum cumque dolorem tempore
+      ducimus tempora, consectetur, necessitatibus recusandae saepe alias?
+      Libero esse atque eveniet sequi!
+    </p>
+
+    <ul class="menu">
+      <li>
+        <a href="#">menu1</a>
+      </li>
+      <li>
+        <a href="#">menu2</a>
+      </li>
+      <li>
+        <a href="#">menu3</a>
+      </li>
+      <li>
+        <a href="#">menu4</a>
+      </li>
+      <li>
+        <a href="#">menu5</a>
+      </li>
+    </ul>
+    <!-- ul>li*5>a>{menu$} -->
+    <ul>
+      <li><a href="">menu1</a></li>
+      <li><a href="">menu2</a></li>
+      <li><a href="">menu3</a></li>
+      <li><a href="">menu4</a></li>
+      <li><a href="">menu5</a></li>
+    </ul>
+    <!-- ul>li*5>a[href=#]>{menu$} -->
+    <ul>
+      <li><a href="#">menu1</a></li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+      <li><a href="#">menu5</a></li>
+    </ul>
+    <hr />
+
+    <ul style="display: flex; gap: 10px">
+      <li><a href="#">MENU1</a></li>
+      <li><a href="#">MENU2</a></li>
+      <li><a href="#">MENU3</a></li>
+      <li><a href="#">MENU4</a></li>
+      <li><a href="#">MENU5</a></li>
+    </ul>
+  </body>
+</html>

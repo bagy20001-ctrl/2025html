@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 3단 찍기, for문사용
+      var dan = 3;
+
+      //   document.write(dan + ' x 2 = ' + dan * 2 + '<br>');
+      //   document.write(dan + ' x 3 = ' + dan * 3 + '<br>');
+      //   document.write(dan + ' x 4 = ' + dan * 4 + '<br>');
+      //   document.write(dan + ' x 5 = ' + dan * 5 + '<br>');
+      //   document.write(dan + ' x 6 = ' + dan * 6 + '<br>');
+      //   document.write(dan + ' x 7 = ' + dan * 7 + '<br>');
+      //   document.write(dan + ' x 8 = ' + dan * 8 + '<br>');
+      //   document.write(dan + ' x 9 = ' + dan * 9 + '<br>');
+
+      // for(초기값;조건문;증감연산++){}
+      var i = 0;
+      var result = 0;
+      for (i = 1; i < 11; i++) {
+        console.log(i);
+        document.write(dan + ' x ' + i + ' = ' + dan * i + '<br>');
+        // result = result + i;
+        result += i;
+      }
+      console.log('최종 i : ' + i);
+      document.write('총합은 : ' + result);
+    </script>
+  </body>
+</html>

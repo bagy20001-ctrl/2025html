@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 성별과 성년을 구분하는 프로그램(남자:M, 나이:20)
+      // 출력 당신은 남자, 성인 입니다.(document.write())
+      var gender = 'M';
+      var year = 20;
+      var result;
+
+      if (gender == 'M') {
+        if (year >= 19) {
+          result = '남자, 성인';
+        } else {
+          result = '남자, 미성년';
+        }
+      } else {
+        if (year >= 19) {
+          result = '여자, 성인';
+        } else {
+          result = '여자, 미성년';
+        }
+      }
+
+      document.write('당신은 ' + result + '입니다.');
+    </script>
+  </body>
+</html>

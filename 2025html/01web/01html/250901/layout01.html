@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* init  */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: black;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+
+      /* menu  */
+
+      .nav ul {
+        display: flex;
+      }
+      .nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        /* background: skyblue; */
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .nav ul li a:hover {
+        background: blue;
+        color: white;
+      }
+
+      .headerWrap {
+        margin: 0 auto;
+        width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* background: pink; */
+      }
+      .hdWrap {
+        /* background: rgb(229, 229, 229); */
+        padding: 10px 0;
+      }
+
+      .util a {
+        display: block;
+        background: rgb(255, 251, 1);
+        padding: 10px 20px;
+        border-radius: 50px;
+      }
+      .vImg {
+        display: block;
+        /* margin-left: auto;
+        margin-right: auto; */
+
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hdWrap">
+      <div class="headerWrap">
+        <h1>
+          <a href="#">
+            <img src="logo02.png" width="103" alt="네이버" />
+          </a>
+        </h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">학교교육</a></li>
+            <li><a href="#">교사연수</a></li>
+            <li><a href="#">커뮤니티</a></li>
+            <li><a href="#">자료실</a></li>
+          </ul>
+        </nav>
+        <div class="util">
+          <div><a href="#">카카오</a></div>
+        </div>
+      </div>
+    </div>
+    <img src="visual01.png" alt="" class="vImg" />
+  </body>
+</html>

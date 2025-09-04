@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- link:css -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .visualWrap {
+        width: 1200px;
+        height: 750px;
+        /* background-color: skyblue; */
+        background-image: url('img/visual02.png');
+        margin-left: auto;
+        margin-right: auto;
+        padding: 100px;
+        border-radius: 30px;
+      }
+      .contWrap {
+        width: 500px;
+        height: 100%;
+        /* background-color: pink; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .btnWrap .btn {
+        padding: 18px 30px;
+        border-radius: 30px;
+
+        background-color: black;
+        border: 0 none;
+        color: white;
+      }
+      .btnWrap .btn.outline {
+        background-color: initial;
+        color: black;
+        font-weight: bold;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="visualWrap">
+      <div class="contWrap">
+        <div>
+          <h2>Lorem ipsum dolor sit amet</h2>
+          <h4>Lorem ipsum dolor sit, amet consectetur</h4>
+        </div>
+        <div class="btnWrap">
+          <button class="btn">25년 2학기 학교교육 신청</button>
+          <button class="btn outline">소식받기</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

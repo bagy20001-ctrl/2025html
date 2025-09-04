@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        font-size: 10px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: black;
+      }
+
+      /* body,
+      p {
+        font-size: 10px;
+      } */
+
+      .link {
+        display: block;
+        font-size: 1.8rem;
+        /* background: skyblue; */
+        padding: 10px;
+      }
+      .menuWrap {
+        display: flex;
+        gap: 50px;
+        /* background: pink; */
+      }
+      .menu {
+        display: flex;
+        width: 1280px;
+        /* background: blue; */
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <p style="font-size: 1.5em">
+      안녕하세요
+      <a href="#" style="font-size: 1.5em">
+        test
+        <span style="font-size: 1.5em">글자의크기</span>
+      </a>
+    </p>
+    <p style="font-size: 1.5rem">
+      안녕하세요
+      <span style="font-size: 1.5rem">만나서 반갑습니다.</span>
+    </p>
+
+    <div class="menu">
+      <h1><img src="logo02.png" alt="" width="100" /></h1>
+      <div class="menuWrap">
+        <a href="#" class="link">학교교육</a>
+        <a href="#" class="link">교사연수</a>
+        <a href="#" class="link">커뮤니티</a>
+        <a href="#" class="link">자료실</a>
+      </div>
+      <div class="utilMenu"><img src="button01.png" alt="" /></div>
+    </div>
+
+    <p>test</p>
+  </body>
+</html>

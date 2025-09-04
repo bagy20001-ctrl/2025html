@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="view">아직 버튼이 눌리지 않음</div>
+    <button onclick="btnClick()">버튼</button>
+
+    <script>
+      function btnClick() {
+        // alert('클릭');
+        document.getElementById('view').innerText = '버튼 눌림';
+      }
+      //   btnClick();
+    </script>
+  </body>
+</html>

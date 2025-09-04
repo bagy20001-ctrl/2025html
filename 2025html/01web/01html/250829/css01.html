@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+        
+        * < tag < class < id < inline style < !important
+
+        */
+
+      /* init */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: black;
+      }
+      /* header */
+      #header h1 {
+      }
+      #nav {
+      }
+      #nav > ul > li {
+      }
+      #nav > li {
+      }
+      #nav li {
+      }
+
+      /* section */
+      #section h2.title {
+      }
+      #section p {
+      }
+
+      /* common  */
+      h2.title {
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <div id="header">
+      <h1 class="logo">로고</h1>
+      <div id="nav">
+        메뉴
+
+        <ul class="mWrap">
+          <li>
+            menu1
+            <ul>
+              <li>sub</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- section -->
+    <div id="section">
+      <h2 class="title">section</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, enim.
+      </p>
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+      <h2>test</h2>
+    </div>
+
+    <!-- <header>
+        <h1></h1>
+        <nav></nav>
+    </header>
+    <section></section>
+    <footer></footer> -->
+  </body>
+</html>

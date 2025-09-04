@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+  </head>
+  <body>
+    <script>
+      var str = 'abcde';
+      var num = 100;
+      //   document.write(str);
+      //   console.log(str);
+      //   alert(str);
+      console.log(str.length);
+      console.log(str[4]);
+      console.log(num.length);
+
+      var adata1 = '서울';
+      var adata2 = '대전';
+
+      var adata = ['서울', '대전', '대구', '부산', '제주', '인천', '강원'];
+
+      console.log('도시갯수 : ' + adata.length);
+
+      document.write(adata.length + '<br>');
+      for (var i = 0; i < adata.length; i = i + 1) {
+        document.write(adata[i] + '<br>');
+      }
+
+      var imgList = [
+        'cardImg01_01.png',
+        'cardImg01_02.png',
+        'cardImg01_03.png',
+      ];
+      var stitle = [
+        '찾아가는 학교교육',
+        '교사 교육 및 전문 연수',
+        '디지털 시민성 연구',
+      ];
+
+      for (var i = 0; i < imgList.length; i++) {
+        // document.write(imgList[i]); cardImg01_01.png
+        // document.write("<img src='' alt='img'>"); <img src='cardImg01_01.png'>
+        // document.write("<img src='" + imgList[i] + "' alt='img'>");
+        document.write("<img src='img/" + imgList[i] + "' alt='img'>");
+        document.write(stitle[i]);
+      }
+      // var vData =[{},{},{}]
+      var vData = [
+        {
+          imgUrl: 'cardImg01_01.png',
+          title: '찾아가는 학교교육1',
+        },
+        {
+          imgUrl: 'cardImg01_02.png',
+          title: '찾아가는 학교교육2',
+        },
+        {
+          imgUrl: 'cardImg01_03.png',
+          title: '찾아가는 학교교육3',
+        },
+      ];
+      console.log(vData[1].imgUrl, vData[1].title);
+
+      for (var i = 0; i < vData.length; i++) {
+        document.write();
+      }
+    </script>
+  </body>
+</html>

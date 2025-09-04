@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        display: block;
+      }
+
+      .img {
+        width: 400px;
+        height: 300px;
+        background-image: url(travel1.jpg);
+      }
+      /* .img:hover {
+        background-image: url(travel2.jpg);
+      } */
+    </style>
+    <script>
+      function clickBtn(obj) {
+        // alert('안녕하세요' + obj.src);
+
+        // window.alert()
+        // obj.src
+
+        obj.src = 'travel2.jpg';
+      }
+      //   clickBtn()
+
+      function over(obj) {
+        obj.src = 'travel2.jpg';
+      }
+      function out(obj) {
+        obj.src = 'travel1.jpg';
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <img src="travel1.jpg" alt="" onclick="alert('test')" />
+    <img src="travel1.jpg" alt="" onclick="this.src='travel2.jpg'" />
+    <img
+      src="travel1.jpg"
+      alt=""
+      onmouseover="this.src='travel2.jpg'"
+      onmouseout="this.src='travel1.jpg'"
+    /> -->
+
+    <!-- <div class="img"></div> -->
+
+    <button onclick="clickBtn()">클릭</button>
+
+    <img src="travel1.jpg" alt="" onclick="clickBtn(this)" />
+
+    <img
+      src="travel1.jpg"
+      alt=""
+      onmouseover="over(this)"
+      onmouseout="out(this)"
+    />
+  </body>
+</html>

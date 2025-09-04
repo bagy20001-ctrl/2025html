@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+           *(0) < tag(1) < class(10) < id(100) < inline style(script) < !important 
+        */
+
+      h1 {
+        color: red;
+      }
+      .title {
+      }
+      h1.title {
+      }
+
+      h1#view {
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      h1 {
+        color: blue;
+      }
+    </style>
+
+    <h1 style="color: blueviolet" class="title" id="view">test</h1>
+
+    <style>
+      h1 {
+        color: aqua;
+      }
+    </style>
+  </body>
+</html>

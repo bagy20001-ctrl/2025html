@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box:after {
+        content: '!!!';
+        display: block;
+      }
+      .box::before {
+        content: '홍길동님,';
+        display: block;
+      }
+
+      /* h3 {
+        text-align: center;
+        background: pink;
+      } */
+
+      h3 {
+        width: 60px;
+        /* background: pink; */
+        margin: auto;
+        text-align: center;
+        position: relative;
+      }
+
+      h3:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background: red;
+        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: -10px;
+      }
+      h3:before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 20px;
+        background-color: blue;
+        position: absolute;
+        left: -8px;
+        top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">안녕하세요</div>
+
+    <h3>TITLE</h3>
+  </body>
+</html>
