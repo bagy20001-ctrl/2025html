@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .boxWrap {
+        width: 200px;
+        height: 200px;
+        background: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+      }
+
+      .circle {
+        width: 30px;
+        height: 30px;
+        background: blue;
+        border-radius: 15px;
+        position: absolute;
+      }
+      /* .st1 {
+        transform: translate(40px, -40px);
+      } */
+      .circle {
+        transition: 0.3s;
+      }
+
+      .boxWrap:hover .st1 {
+        transform: translate(40px, -40px);
+      }
+      .boxWrap:hover .st2 {
+        transform: translate(-40px, -40px);
+      }
+      .boxWrap:hover .st4 {
+        transform: translate(-40px, 40px);
+      }
+      .boxWrap:hover .st5 {
+        transform: translate(40px, 40px);
+      }
+
+      .boxWrap:hover {
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxWrap">
+      <div class="circle st1"></div>
+      <div class="circle st2"></div>
+      <div class="circle"></div>
+      <div class="circle st4"></div>
+      <div class="circle st5"></div>
+    </div>
+  </body>
+</html>

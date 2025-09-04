@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 1200px;
+        height: 300px;
+        background: pink;
+        position: relative;
+        margin: 0 auto;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        position: absolute;
+      }
+      .one {
+        right: 0;
+        top: 50px;
+      }
+      .two {
+        bottom: 0;
+        right: 100px;
+      }
+      .bgColor1 {
+        background: red;
+      }
+      .bgColor2 {
+        background: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box one">1</div>
+      <div class="box two">2</div>
+    </div>
+    <div class="container bgColor1"></div>
+    <div class="container bgColor2"></div>
+  </body>
+</html>

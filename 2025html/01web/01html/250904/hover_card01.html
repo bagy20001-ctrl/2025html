@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+
+      .cardWrap {
+        display: flex;
+        /* gap:15px; */
+        justify-content: space-between;
+      }
+
+      .color1 {
+        background: skyblue;
+      }
+      .color2 {
+        background: pink;
+      }
+      .color3 {
+        background: burlywood;
+      }
+
+      .card {
+        width: 350px;
+        background: white;
+        /* box-shadow: 0 0 20px #000000; */
+        /* box-shadow: 10px 10px 20px rgba(0,0,0,0.3); */
+        transition: 0.3s;
+        
+        cursor: pointer;
+
+      }
+      /* .card:hover{
+        
+        transform:translate(-10px,-10px);
+        box-shadow: 15px 15px 40px rgba(0,0,0,0.5);
+      } */
+
+      .card img{
+        transition: 0.3s;
+      }
+      .card:hover img{
+        transform: translateY(-10px);
+        box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+      }
+
+
+
+      .card img {
+        width: 100%;
+      }
+      .card .card-body {
+        padding: 16px;
+      }
+
+      .container h2{
+        text-align: center;
+        padding:16px
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Lorem ipsum dolor sit.</h3>
+      <div class="cardWrap">
+        <div class="card">
+          <img src="img/cardImg01_01.png" alt="" />
+          <div class="card-body">
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/cardImg01_02.png" alt="" />
+          <div class="card-body">
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/cardImg01_03.png" alt="" />
+          <div class="card-body">
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+        .box{
+            width: 100px;
+            text-align: center;
+            padding: 10px ;
+            cursor:pointer;
+            transition:0.3s;
+            position: relative;
+            left: 0;
+        }
+        .box:hover{
+            width: 110px;
+            background: blue;
+            color:white;
+            left: 10px;
+        }
+    </style>
+    <div class="box color2">button</div>
+  </body>
+</html>
