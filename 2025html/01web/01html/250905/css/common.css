@@ -1,0 +1,48 @@
+h2.title {
+  font-size: 80px;
+}
+h2.sub {
+  font-size: 24px;
+}
+
+h3.tit {
+  font-size: 44px;
+}
+h4.tit {
+  font-size: 28px;
+}
+h5.tit {
+  font-size: 24px;
+}
+h6.tit {
+  font-size: 21px;
+}
+
+p.txt1 {
+  font-size: 18px;
+}
+p.txt2 {
+  font-size: 15px;
+}
+p.txt3 {
+  font-size: 14px;
+}
+
+p.txt5 {
+  font-size: 12px;
+}
+
+button {
+  font-size: 14px;
+}
+
+a.navMenu {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
