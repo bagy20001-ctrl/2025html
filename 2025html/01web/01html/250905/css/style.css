@@ -1,0 +1,46 @@
+/* header */
+
+.header {
+  background: white;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.header .wrap {
+  /* background: skyblue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 76px;
+}
+
+.header h1 img {
+  width: 165px;
+}
+
+.header .menuWrap ul {
+  display: flex;
+  gap: 100px;
+}
+
+/* visual  */
+.visual {
+  height: 100vh;
+  background-color: pink;
+  background-image: url(../img/img01_01.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+/* content */
+
+.cont01 {
+  height: 300px;
+}
+
+/* footer */
