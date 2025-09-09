@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <span id="cityname" class="city1">도시명1</span><br />
+      <span id="cityname1" class="city">도시명2</span><br />
+      <span id="cityname2" class="city1">도시명3</span><br />
+      <span id="cityname3" class="city">도시명4</span><br />
+      <span id="cityname4" class="city1">도시명5</span><br />
+      <span id="cityname5" class="city">도시명6</span>
+    </div>
+    <button onclick="cityList()">클릭</button>
+    <button onclick="resetList()">원상태로</button>
+    <script>
+      //변수 = 배열.join()
+      // document.write(변수)
+      var city = ['서울', '부산', '대전'];
+      var joindata1 = city.join('/');
+
+      //   document.write(joindata1);
+      //   document.getElementById('cityname').innerText = joindata1;
+      //document.getElementsByTagName('span')[0].innerText = joindata1;
+
+      var city1Elem = document.getElementsByClassName('city1');
+      function cityList() {
+        //   city1Elem[0].innerText = joindata1;
+        //   city1Elem[1].innerText = joindata1;
+        //   city1Elem[2].innerText = joindata1;
+
+        for (var i = 0; i < city1Elem.length; i++) {
+          city1Elem[i].innerText = joindata1;
+          city1Elem[i].style.background = 'pink';
+          city1Elem[i].style.display = 'none';
+        }
+      }
+
+      function resetList() {
+        // var city1Elem = document.getElementsByClassName('city1');
+        for (var i = 0; i < city1Elem.length; i++) {
+          city1Elem[i].innerText = '도시명' + (2 * i + 1);
+          city1Elem[i].style.background = 'initial';
+          city1Elem[i].style.display = 'initial';
+        }
+      }
+
+      //   cityList();
+    </script>
+  </body>
+</html>

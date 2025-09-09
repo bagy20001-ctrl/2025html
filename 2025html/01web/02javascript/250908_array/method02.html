@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="city"></div>
+    <button onclick="insert()">인천추가</button>
+    <script>
+      var cityData = ['서울', '부산', '대구', '대전'];
+
+      // 배열.forEach()
+      // 배열.forEach(function(){})
+      // 배열.forEach(함수이름)
+      // 배열.forEach(function(item,index){})
+
+      //   cityData
+      //     .forEach(function (item, index) {})
+      //   ['서울', '부산', '대구', '대전'].forEach(function (item, index) {
+      //     console.log(item, index);
+      //   });
+      function cityList() {
+        cityData.forEach(function (item, index) {
+          console.log(item);
+          document.write('<div>' + item + '</div>');
+        });
+      }
+
+      cityList();
+
+      function insert() {
+        cityData.push('인천');
+        cityList();
+      }
+    </script>
+  </body>
+</html>

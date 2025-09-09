@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 1216px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .color1 {
+        background: skyblue;
+      }
+      .color2 {
+        background: pink;
+      }
+      .py-3 {
+        padding: 30px 0;
+      }
+      .px-3 {
+        padding: 0 30px;
+      }
+      h4 {
+        font-size: 44px;
+      }
+      p {
+        font-size: 18px;
+      }
+      h4::after {
+        content: '';
+        width: 80px;
+        height: 5px;
+        background: red;
+        display: block;
+        margin-top: 10px;
+      }
+      .sec01 {
+        height: 280px;
+      }
+      .sec01 p {
+        background: pink;
+        position: absolute;
+        right: 0;
+        bottom: 30px;
+      }
+
+      .sec02 {
+        height: 280px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .sec02 p {
+        align-self: flex-end;
+      }
+
+      .sec03 {
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .sec03 h4 {
+        background: gray;
+      }
+      .sec03 p {
+        background: green;
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container sec01 color1 py-3">
+      <h4>
+        문화를 만들고 인재를 키우고<br />
+        마음을 나눕니다
+      </h4>
+      <p>
+        넷마블문화재단은 문화적 가치 확산을 통해 우리 사회의 미래 경쟁력을 높여
+        가고자<br />다양한 공익 활동을 전개해 나가고 있습니다.
+      </p>
+    </div>
+
+    <div class="container sec02 color2 py-3">
+      <h4>
+        문화를 만들고 인재를 키우고<br />
+        마음을 나눕니다
+      </h4>
+      <p>
+        넷마블문화재단은 문화적 가치 확산을 통해 우리 사회의 미래 경쟁력을 높여
+        가고자<br />다양한 공익 활동을 전개해 나가고 있습니다.
+      </p>
+    </div>
+
+    <div class="container sec03 color1 py-3">
+      <h4>
+        문화를 만들고 인재를 키우고<br />
+        마음을 나눕니다
+      </h4>
+      <p>
+        넷마블문화재단은 문화적 가치 확산을 통해 우리 사회의 미래 경쟁력을 높여
+        가고자<br />다양한 공익 활동을 전개해 나가고 있습니다.
+      </p>
+    </div>
+  </body>
+</html>

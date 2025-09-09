@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>지역 : <span class="city">도시이름</span></div>
+    <div>지역 : <span class="city">도시이름</span></div>
+    <div>지역 : <span class="city">도시이름</span></div>
+
+    <button onclick="cityInsert()">도시출력</button>
+    <script>
+      var cityData = ['서울', '대구', '부산', '인천'];
+      var cityNum = [1, 2, 3];
+      //   var cityElem = document.getElementsByClassName('city')[0];
+      var cityElem = document.querySelector('.city');
+
+      var cityName = '';
+
+      function cityList(item, index) {
+        // cityName += value
+        // cityName = cityName + value;
+        // document.write(value);
+
+        cityName += item;
+        // cityName += cityData[i];
+      }
+
+      function cityInsert() {
+        //forEach 실행
+        cityData.forEach(cityList);
+
+        console.log(cityName);
+
+        cityElem.innerHTML = cityName;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* .boxWrap  div{}
+        div.boxWrap div.box1{} */
+      .boxWrap {
+        background: skyblue;
+        display: flex;
+        /* justify-content: center; */
+        justify-content: space-between;
+        height: 300px;
+        align-items: flex-end;
+      }
+
+      .boxWrap div {
+        background: pink;
+        /* display: inline; */
+        /* display: inline-block; */
+        /* padding: 10px;
+        margin: 10px; */
+        /* width: 100px;
+        height: 100px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .boxWrap a {
+        background: blue;
+        width: 100%;
+        height: 100%;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .boxWrap .box2 {
+        align-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxWrap">
+      <div class="box1"><a href="#">1</a></div>
+      <div class="box2"><a href="#">2</a></div>
+      <div class="box3">3</div>
+    </div>
+  </body>
+</html>
