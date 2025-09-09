@@ -1,0 +1,48 @@
+/* header */
+
+.header {
+  background: white;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 76px;
+}
+
+.header h1 img {
+  width: 165px;
+}
+
+.header .meunWrap u {
+  display: flex;
+  gap: 100px;
+}
+
+/* content */
+
+.cont01 {
+  height: 300px;
+}
+
+/* footer */
+
+.box10 .prevBtn {
+  font-size: x-large;
+  background: none;
+  color: white;
+  border: none;
+}
+.box10 .nextBtn {
+  font-size: x-large;
+  background: none;
+  color: white;
+  border: none;
+}
+.box10 .viewFra {
+  color: white;
+}
