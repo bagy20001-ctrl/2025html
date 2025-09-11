@@ -1,0 +1,128 @@
+body {
+  background: skyblue;
+}
+.container {
+  width: 1320px;
+  margin: 0 auto;
+}
+
+/* header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .menu {
+  display: flex;
+  gap: 20px;
+}
+/* .header .menu li {
+  padding: 6px 16px;
+}
+
+.header .menu li:hover {
+  background: pink;
+} */
+
+.header .menu a {
+  /* 1 */
+  /* display: block;
+  padding: 6px 16px; */
+
+  /* 2 */
+  /* display: block;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px; */
+
+  /* 3 */
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .menu a:hover {
+  background: pink;
+}
+
+.header .toggle {
+  /* display: none; */
+  width: 35px;
+  height: 35px;
+  background: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.toggle div {
+  width: 23px;
+  height: 4px;
+  background: #505050;
+  border-radius: 3px;
+  position: absolute;
+}
+.toggle .bar1 {
+  transform: translateY(-8px);
+}
+.toggle .bar3 {
+  transform: translateY(8px);
+}
+
+/* visual */
+
+/* section1 */
+
+/* common */
+.bg-color1 {
+  background: rgb(51, 132, 164);
+}
+.bg-color2 {
+  background: rgb(198, 198, 198);
+}
+
+/********** css responsive  **********/
+@media (max-width: 1399px) {
+  body {
+    background: pink;
+  }
+  .container {
+    width: 1140px;
+    background: rgb(193, 84, 102);
+  }
+}
+
+@media (max-width: 1199px) {
+  body {
+    background: red;
+  }
+}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  body {
+    background: rgb(192, 191, 191);
+  }
+  .container {
+    /* width: 100%; */
+    background: gray;
+  }
+  .header .menu {
+    display: none;
+  }
+  .header .toggle {
+    display: flex;
+  }
+}
