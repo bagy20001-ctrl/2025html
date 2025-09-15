@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <span id="carname">자동차이름</span>
+    </div>
+    <script>
+      // var(변수선언)
+      // let(변수선언) const(상수)
+
+      //   var han = 10;
+      //   var han = 100;
+
+      //   let test = 10;
+      //   let test = 100;
+
+      //   const MAX = 1000;
+      //   MAX = 1;
+
+      //   arr.forEach(function () {});
+      //   function fn() {}
+
+      let arr = [{}, {}];
+      // String[] str = new String[10];
+      let car = {
+        name: 'sonata',
+        speed: 100,
+        color: 'red',
+        door: 4,
+        start: function () {
+          console.log('나의 차는' + this.name + '입니다.');
+          return this.speed + 100;
+        },
+      };
+
+      let car1 = {
+        name: 'pride',
+        speed: 100,
+        color: 'red',
+        door: 4,
+        start: function () {
+          console.log('나의 차는' + this.name + '입니다.');
+          return this.speed + 100;
+        },
+      };
+
+      // Car mycar = new Car();
+      console.log(car.name);
+      console.log(car1.name);
+      car.start();
+      //   document.write(car.start());
+
+      class MyCar {
+        name;
+        speed;
+        color;
+        door;
+
+        constructor(name, speed) {
+          this.name = name;
+          this.speed = speed;
+        }
+      }
+
+      const myCar1 = new MyCar('프라이드', 100);
+      const myCar2 = new MyCar('그랜져', 200);
+
+      //   myCar1.name = 'sonata';
+      console.log(myCar1.name, myCar1.speed);
+
+      document.getElementById('carname').innerHTML = myCar1.name;
+
+      const user = {
+        id: 1234,
+        name: '홍길동',
+        phone: '010-1111-1111',
+        email: 'han@test.com',
+      };
+      const data = [
+        {
+          id: 1234,
+          name: '홍길동',
+          phone: '010-1111-1111',
+          email: 'han@test.com',
+        },
+        {
+          id: 1235,
+          name: '홍길동',
+          phone: '010-1111-1111',
+          email: 'han@test.com',
+        },
+      ];
+
+      data1 = data;
+    </script>
+  </body>
+</html>

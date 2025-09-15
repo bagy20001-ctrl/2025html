@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .toggle {
+        width: 35px;
+        height: 35px;
+        background: skyblue;
+        border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* flex-direction: column; */
+        /* gap: 2px; */
+        position: relative;
+      }
+      .toggle div {
+        width: 23px;
+        height: 4px;
+        background: #000;
+        border-radius: 2px;
+        position: absolute;
+        transition: 0.3s;
+      }
+
+      .toggle .bar1 {
+        transform: translateY(-8px);
+      }
+      .toggle .bar3 {
+        transform: translateY(8px);
+      }
+
+      .toggle.active .bar1 {
+        transform: translateY(0) rotate(45deg);
+      }
+
+      .toggle.active .bar2 {
+        opacity: 0;
+        /* display: none; */
+      }
+
+      .toggle.active .bar3 {
+        transform: translateY(0) rotate(-45deg);
+      }
+
+      .box .active {
+        background: pink;
+      }
+
+      /* *(0) < tag/1 < class/10 < id/100 < inline style(javascipt) < !important */
+    </style>
+  </head>
+  <body>
+    <!-- <div class="box active">1</div> -->
+    <div class="toggle" onclick="myButton()" id="han">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <!-- <div class="toggle"></div> -->
+
+    <script>
+      function myButton() {
+        document.getElementsByClassName('toggle')[0].classList.toggle('active');
+        // // document.getElementById('han').classList.toggle('active');
+
+        // const toggleElm = document.getElementById('han').classList;
+
+        // if (toggleElm.value == 'toggle') {
+        //   toggleElm.add('active');
+        //   document.getElementById('han').style.background = 'green'; // set
+        //   console.log(document.getElementById('han').style.background); // get
+
+        //   // document.getElementsByClassName('bar1')[0].style.background = 'red';
+        //   document.querySelector('.toggle div').style.background = 'red';
+        // } else {
+        //   toggleElm.remove('active');
+        //   // document.getElementsByClassName('bar1')[0].style.background = 'black';
+        //   document.querySelector('.toggle div').style.background = 'black';
+        // }
+      }
+    </script>
+  </body>
+</html>
