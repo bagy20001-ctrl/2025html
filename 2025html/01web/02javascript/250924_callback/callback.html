@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function greet(name, han) {
+        // console.log("너의 이름은 " + name);
+        console.log(`너의 이름은 ${name} 입니다.`);
+        han();
+      }
+
+      greet('홍길동', function () {
+        console.log('만나서 반갑습니다.');
+      });
+
+      //   배열.forEach(function(item,index){})
+      // setTimeout(function(){},1000)
+
+      //   setTimeout(function () {
+      //     console.log('실행됨');
+      //   }, 2000);
+
+      //   console.log('바로실행');
+
+      function getUser(id, callback) {
+        // setTimeout(function(){},1000)
+        setTimeout(function () {
+          callback({ id: id, name: '홍길동' });
+        }, 1000);
+      }
+
+      //   function getOrder(userName, cb) {
+      //     setTimeout(function () {
+      //       cb('상품주문완료');
+      //     }, 1000);
+      //   }
+
+      //let user = { id: id, name: '홍길동' }
+
+      getUser(1, function (user) {
+        console.log(user.id, user.name);
+      });
+    </script>
+  </body>
+</html>

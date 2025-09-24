@@ -1,0 +1,41 @@
+@startuml
+title RPG GameCharacter ISA 구조
+
+class GameCharacter {
+  - name : String
+  - level : int
+  - hp : int
+  --
+  + GameCharacter(name:String, level:int, hp:int)
+  + showInfo() : void
+  + attack() : void
+}
+
+class Warrior {
+  - weapon : String
+  --
+  + Warrior(name:String, level:int, hp:int, weapon:String)
+  + attack() : void
+  + defend() : void
+}
+
+class Mage {
+  - element : String
+  --
+  + Mage(name:String, level:int, hp:int, element:String)
+  + attack() : void
+  + teleport() : void
+}
+
+class Archer {
+  - bowType : String
+  --
+  + Archer(name:String, level:int, hp:int, bowType:String)
+  + attack() : void
+  + hide() : void
+}
+
+GameCharacter <|-- Warrior
+GameCharacter <|-- Mage
+GameCharacter <|-- Archer
+@enduml

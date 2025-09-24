@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .view {
+        background: skyblue;
+      }
+      .view span {
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="view">
+      <span>자료넣기</span>
+    </div>
+    <!-- <button onclick="inserData()">입력하기</button> -->
+    <button class="btn">입력하기</button>
+    <script>
+      function inserData() {
+        // alert('test');
+        // document.getElementsByClassName('view')[0].innerHTML = '안녕하세요';
+        document.querySelector('div.view span').innerHTML = '안녕하세요';
+      }
+      //   dom.addEventListener("이벤트이름",무명함수)
+      //   dom.addEventListener("이벤트이름",함수이름) - 함수에 소가로는 빼고
+      // document.querySelector(".btn").addEventListener("click",inserData)
+
+      document.querySelector('.btn').addEventListener('click', function () {
+        document.querySelector('div.view span').innerHTML = '안녕하세요';
+      });
+
+      const btnElem = document.querySelector('.btn');
+      const inserDataElem = document.querySelector('div.view span');
+
+      btnElem.querySelector('.btn').addEventListener('click', function () {
+        inserDataElem.innerHTML = '감사합니다.';
+      });
+
+      //jquery
+      //   function name(){}
+      //   $(".btn").click(name)
+      //   $(".btn").on("click",function(){})
+    </script>
+  </body>
+</html>

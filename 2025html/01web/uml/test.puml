@@ -1,0 +1,49 @@
+@startuml
+title 회원가입 다형성 예제 - 클래스 다이어그램
+
+class Member {
+  - name : String
+  - age  : int
+  --
+  + Member(name:String, age:int)
+  + showInfo() : void
+  + join() : void
+}
+
+class StudentMember {
+  - school : String
+  --
+  + StudentMember(name:String, age:int, school:String)
+  + join() : void
+  + study() : void
+}
+
+class TeacherMember {
+  - subject : String
+  --
+  + TeacherMember(name:String, age:int, subject:String)
+  + join() : void
+  + teach() : void
+}
+
+Member <|-- StudentMember
+Member <|-- TeacherMember
+
+note right of Member
+공통 속성과 동작 보유
+- name, age
+- showInfo(), join()
+end note
+
+note bottom of StudentMember
+학생회원 전용
+- school, study()
+- join() 오버라이드
+end note
+
+note bottom of TeacherMember
+교사회원 전용
+- subject, teach()
+- join() 오버라이드
+end note
+@enduml

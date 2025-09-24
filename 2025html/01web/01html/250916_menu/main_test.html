@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <h1><a href="#">LOGO</a></h1>
+        <ul class="menu"></ul>
+      </div>
+    </div>
+    <div class="visual"></div>
+
+    <script src="menu.js"></script>
+    <script>
+      //   const menuElm = document.querySelector('.menu');
+
+      //   let listView = '';
+      //   menu.forEach((item) => {
+      //     listView += `
+      //             <li>
+      //                 <a href="${item.url}">${item.menu}</a>
+      //             </li>
+      //         `;
+      //   });
+      //   menuElm.innerHTML = listView;
+    </script>
+    <script>
+      const menuElm = document.querySelector('.menu');
+
+      let listView = '';
+      menu.forEach((item) => {
+        listView += `<li><a href="${item.url}">${item.menu}</a>`;
+
+        if (item.sub) {
+          listView += '<ul class="sub">';
+
+          item.submenu.forEach((subItem) => {
+            listView += `<li><a href="${subItem.url}">${subItem.menu}</a></li>`;
+          });
+
+          listView += '</ul>';
+        }
+
+        listView += `</li>`;
+      });
+      menuElm.innerHTML = listView;
+    </script>
+  </body>
+</html>

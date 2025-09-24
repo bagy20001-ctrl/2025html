@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" class="inp" placeholder="오늘의 할 일 입력" value="" />
+    <button class="btn">입력</button>
+
+    <ul class="todoView">
+      <li>오늘의 할 일 <button class="del" onclick="">삭제</button></li>
+    </ul>
+    <button class="delAll">전체삭제</button>
+    <script>
+      const inpElem = document.querySelector('.inp');
+      const btnElem = document.querySelector('.btn');
+      const dataListElem = document.querySelector('.todoView');
+      const delAllElem = document.querySelector('.delAll');
+
+      let listData = [];
+
+      //create
+      btnElem.addEventListener('click', function () {
+        console.log(inpElem.value);
+        // if (inpElem.value == '') {
+        //   alert('자료를 입력해주세요');
+        // } else {
+        //   listData.push(inpElem.value);
+        //   //   inpElem.value // get
+        //   //   inpElem.value = "" //set
+        //   inpElem.value = '';
+        // }
+
+        if (inpElem.value != '') {
+          listData.push(inpElem.value);
+          inpElem.value = '';
+          viewData(); // 화면에 그리기
+        } else {
+          alert('오늘의 할일을 입력하세요');
+        }
+      });
+
+      // read
+      function viewData() {
+        // console.log('자료가 보여요');
+        // console.log(listData);
+
+        let html = '';
+
+        for (let i = 0; i < listData.length; i++) {
+          console.log('할일' + i + '. ' + listData[i]);
+          html =
+            html +
+            `<li>${i + 1}. ${
+              listData[i]
+            } <button class="del" onclick="myDel(${i})">삭제</button></li>`;
+        }
+        dataListElem.innerHTML = html;
+      }
+
+      viewData(); // 화면에 그리기
+
+      //전체 삭제
+      delAllElem.addEventListener('click', function () {
+        listData = [];
+        viewData(); // 화면에 그리기
+      });
+
+      //개별삭제
+      function myDel(num) {
+        // alert(num + '번째를 삭제합니다.');
+        listData.splice(num, 1);
+        viewData(); // 화면에 그리기
+      }
+
+      //   let han = 1234;
+      //   var test1 = 11111;
+      //   const test2 = [];
+
+      //   let han = 'han'; error
+      //   han = "jkfldsa"
+
+      //   var test1 = 'jkfld;sasf';
+      //   test2 = [];
+    </script>
+  </body>
+</html>

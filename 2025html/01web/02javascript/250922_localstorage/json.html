@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="name"></div>
+    <script>
+      /*
+      json : javascript object notaition
+
+      xml -> json
+      xml
+      <title>han</title>
+      <book>
+          <title>삼국지</title>
+          <author>일연</author>
+              ...
+
+      </book>
+
+      json ->key:value
+      json data -> pasing
+      {
+          "book":{
+              "title":"삼국지",
+              "author":"일연",
+          }
+      }
+
+      yaml
+      fruit :
+        - apple
+        - banna
+
+          xml -> json -> yaml
+
+
+      */
+
+      //   const test = {
+      //     regDate: '2025-09-22T01:22:30.727Z',
+      //     data: {
+      //       versionInfo: {
+      //         policyVersion: '250909.02',
+      //         loaderVersion: '1.5.2',
+      //         sdkVersion: '3.4.2',
+      //       },
+      //       sdkInfo: {},
+      //       sentryInfo: {
+      //         enableSentry: true,
+      //         config:
+      //             { sampleRate: 0.001 } }
+      //         ,
+      //     },
+      //   };
+
+      const mydata = {
+        name: '홍길동',
+        type: '영웅',
+        hit: {
+          num: 10,
+          type: {
+            one: '부채',
+            two: '표창',
+          },
+        },
+      };
+      console.log(mydata.hit.type.one);
+
+      /*
+      localstorage : 데이터를 저장하려면 json 문자data 입력 , 데이터를 가지고 오려면 번역
+      */
+
+      const userInfo = {
+        name: '홍길동',
+        age: '30',
+        hobby: 'coding',
+      };
+
+      //저장
+      localStorage.setItem('user', JSON.stringify(userInfo));
+      console.log(localStorage);
+      console.log(localStorage.getItem('user'));
+      console.log(localStorage.key(0));
+
+      //불러오기
+      const storageData = JSON.parse(localStorage.getItem('user'));
+      console.log(storageData.name);
+
+      document.querySelector('.name').innerHTML = storageData.name;
+
+      //   const tData =[ {
+      //         "addr1": "서울특별시 중구 남대문시장길 18-6",
+      //         "addr2": "",
+      //         "zipcode": "04528",
+      //         "areacode": "1",
+      //         "cat1": "A05",
+      //         "cat2": "A0502",
+      //         "cat3": "A05020100",
+      //         "contentid": "747811",
+      //         "contenttypeid": "39",
+      //         "createdtime": "20090605193905",
+      //         "dist": "719.9992234440199",
+      //         "firstimage": "http://tong.visitkorea.or.kr/cms/resource/59/687759_image2_1.jpg",
+      //         "firstimage2": "http://tong.visitkorea.or.kr/cms/resource/59/687759_image3_1.jpg",
+      //         "cpyrhtDivCd": "Type3",
+      //         "mapx": "126.9769824584",
+      //         "mapy": "37.5598827704",
+      //         "mlevel": "6",
+      //         "modifiedtime": "20250919150716",
+      //         "sigungucode": "24",
+      //         "tel": "02-775-5033",
+      //         "title": "호남식당",
+      //         "lDongRegnCd": "11",
+      //         "lDongSignguCd": "140",
+      //         "lclsSystm1": "FD",
+      //         "lclsSystm2": "FD01",
+      //         "lclsSystm3": "FD010100"
+      //       },
+      //   {
+      //         "addr1": "서울특별시 중구 남대문시장길 18-6",
+      //         "addr2": "",
+      //         "zipcode": "04528",
+      //         "areacode": "1",
+      //         "cat1": "A05",
+      //         "cat2": "A0502",
+      //         "cat3": "A05020100",
+      //         "contentid": "747811",
+      //         "contenttypeid": "39",
+      //         "createdtime": "20090605193905",
+      //         "dist": "719.9992234440199",
+      //         "firstimage": "http://tong.visitkorea.or.kr/cms/resource/59/687759_image2_1.jpg",
+      //         "firstimage2": "http://tong.visitkorea.or.kr/cms/resource/59/687759_image3_1.jpg",
+      //         "cpyrhtDivCd": "Type3",
+      //         "mapx": "126.9769824584",
+      //         "mapy": "37.5598827704",
+      //         "mlevel": "6",
+      //         "modifiedtime": "20250919150716",
+      //         "sigungucode": "24",
+      //         "tel": "02-775-5033",
+      //         "title": "호남식당",
+      //         "lDongRegnCd": "11",
+      //         "lDongSignguCd": "140",
+      //         "lclsSystm1": "FD",
+      //         "lclsSystm2": "FD01",
+      //         "lclsSystm3": "FD010100"
+      //       }
+      //    ]
+
+      // tData[0].addr1
+      // tData[1].addr1
+    </script>
+  </body>
+</html>

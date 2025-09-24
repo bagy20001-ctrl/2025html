@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div><span> </span></div>
+    <div><a href="#"></a></div>
+    <script>
+      let name = '홍길동';
+      let age = 10;
+      let str = '안녕하세요';
+      let url = 'http://www.naver.com';
+      document.write(name + '님 로그인하셨습니다. ' + str + '당신의 나이는 ');
+      document.write('<div><span>' + name + ' </span></div>');
+      document.write("<div><a href='" + url + "'>" + name + '</a></div>');
+      document.write(`<div><a href="${url}">${name} / ${age + 10}</a></div>`);
+    </script>
+  </body>
+</html>

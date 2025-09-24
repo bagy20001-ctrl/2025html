@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <h1><a href="#">LOGO</a></h1>
+        <ul class="menu">
+          <li>
+            <a href="#">COMPANY</a>
+            <ul class="sub">
+              <li><a href="#">sub01_01</a></li>
+              <li><a href="#">sub01_02</a></li>
+              <li><a href="#">sub01_03</a></li>
+              <li><a href="#">sub01_04</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">PRODUCT</a>
+            <ul class="sub">
+              <li><a href="#">sub02_01</a></li>
+              <li><a href="#">sub02_02</a></li>
+              <li><a href="#">sub02_03</a></li>
+              <li><a href="#">sub02_04</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">ONLINE</a>
+            <ul class="sub">
+              <li><a href="#">sub03_01</a></li>
+              <li><a href="#">sub03_02</a></li>
+              <li><a href="#">sub03_03</a></li>
+              <li><a href="#">sub03_04</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">COMMUNITY</a>
+            <ul class="sub">
+              <li><a href="#">sub04_01</a></li>
+              <li><a href="#">sub04_02</a></li>
+              <li><a href="#">sub04_03</a></li>
+              <li><a href="#">sub04_04</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">BOARD</a>
+            <ul class="sub">
+              <li><a href="#">sub05_01</a></li>
+              <li><a href="#">sub05_02</a></li>
+              <li><a href="#">sub05_03</a></li>
+              <li><a href="#">sub05_04</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="toggle"></div>
+        <div class="mMenu"></div>
+      </div>
+    </div>
+    <div class="visual"></div>
+
+    <script src="menu.js"></script>
+    <script>
+      const menuElm = document.querySelector('.menu');
+
+      let listView = '';
+
+      // for (let i = 0; i < menu.length; i++) {
+      //   console.log(menu[i]);
+      //   console.log(menu[i].menu);
+      //   console.log(menu[i].url);
+      // }
+
+      // 배열.forEach(function(item,index){})
+
+      // menu.forEach(function (item, index) {
+      //   // console.log(item);
+      //   // console.log(menu[index]);
+      //   // console.log(item.menu);
+      //   console.log(menu[index].menu);
+      // });
+
+      menu.forEach((item) => {
+        console.log(item.menu);
+
+        // 빽틱 `` 안에서 변수사용하려면 ${변수}
+        // depth1 menu만
+        // listView += `
+        //   <li>
+        //     <a href="${item.url}">${item.menu}</a>
+        //   </li>
+        //   `;
+
+        //depth2 submenu
+        listView += `
+          <li>
+            <a href="${item.url}">${item.menu}</a>`;
+
+        if (item.sub == true) {
+          // listView += ``
+
+          console.log(item.submenu);
+          // item.submenu.forEach()
+
+          listView += "<ul class='sub'>";
+          item.submenu.forEach(function (subItem) {
+            listView += `
+                <li>
+                  <a href="${subItem.url}">${subItem.menu}</a>
+                </li>
+              `;
+          });
+          listView += '</ul>';
+        }
+
+        listView += `</li>`;
+      });
+
+      menuElm.innerHTML = listView;
+    </script>
+
+    <script>
+      // listView += "<li>"
+      // listView += "    <a href='"+ item.url +"'>"+item.menu+"</a>"
+      // listView += "    <ul class='sub'>"
+      // listView += "      <li><a href='#'>sub01_01</a></li>"
+      // listView += "      <li><a href='#'>sub01_02</a></li>"
+      // listView += "      <li><a href='#'>sub01_03</a></li>"
+      // listView += "      <li><a href='#'>sub01_04</a></li>"
+      // listView += "    </ul>"
+      // listView += "  </li>"
+
+      // listView += `<li>
+      //       <a href="#">PRODUCT</a>
+      //       <ul class="sub">
+      //         <li><a href="#">sub02_01</a></li>
+      //         <li><a href="#">sub02_02</a></li>
+      //         <li><a href="#">sub02_03</a></li>
+      //         <li><a href="#">sub02_04</a></li>
+      //       </ul>
+      //     </li>
+      //     `
+      //     '' ``
+    </script>
+  </body>
+</html>

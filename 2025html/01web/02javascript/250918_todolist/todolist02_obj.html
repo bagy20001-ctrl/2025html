@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+      integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      ul,
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .inpMoBtn {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-3">
+      <h3 class="text-center">오늘의 할 일 리스트</h3>
+      <div class="row">
+        <div class="col-md-6 offset-md-3 d-flex">
+          <input
+            type="text"
+            value=""
+            class="inp form-control me-2"
+            placeholder="오늘의 할 일을 입력하세요"
+          />
+
+          <input type="hidden" class="numInp" />
+          <button class="btn btn-primary inpBtn" style="width: 100px">
+            입력
+          </button>
+          <button class="btn btn-danger inpMoBtn" style="width: 100px">
+            수정
+          </button>
+        </div>
+      </div>
+      <div class="row px-3">
+        <div class="col-md-6 offset-md-3">
+          <ul class="viewList">
+            <li class="d-flex justify-content-between py-3">
+              <div>자바</div>
+              <div class="d-flex gap-3">
+                <i class="fa-solid fa-square-check"></i>
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-trash"></i>
+              </div>
+            </li>
+            <li class="d-flex justify-content-between">
+              <div>자바</div>
+              <div class="d-flex gap-3">
+                <i class="fa-solid fa-square"></i>
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-trash"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row py-3">
+        <div class="col-md-6 offset-md-3">
+          <div class="btn btn-danger d-block delAll">전체삭제</div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+      integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      /*
+        1. 입력, 리스트, 체크, 수정, 삭제, 전체삭제 ->crud
+        2. 디자인 -> 선택자(dom) 찾기 -> 저장소(설계)/샘플데이터생성 -> for문
+
+
+        */
+
+      //   let listView = [
+      //     {
+      //         index:0,
+      //       todo: '자바1111',
+      //       done: false,
+      //     },
+      //     {
+      //       todo: '자바스크립트',
+      //       done: false,
+      //     },
+      //     {
+      //       todo: '도커',
+      //       done: true,
+      //     },
+      //     {
+      //       todo: 'mysql',
+      //       done: true,
+      //     },
+      //   ];
+
+      let listView = [];
+
+      //dom
+      const viewDataElem = document.querySelector('.viewList');
+      const inpElem = document.querySelector('.inp'); // value
+      const inpNumElem = document.querySelector('.numInp');
+      const btnElem = document.querySelector('.inpBtn'); // event
+      const btnMoElem = document.querySelector('.inpMoBtn'); // event
+
+      //create
+      btnElem.addEventListener('click', function () {
+        if (inpElem.value != '') {
+          let value = { todo: inpElem.value, done: false }; //초기값
+          listView.push(value);
+
+          // localstorage update
+          let valueData = JSON.stringify(listView);
+          localStorage.setItem('todoData', valueData);
+
+          inpElem.value = '';
+          viewData();
+        } else {
+          alert('오늘의 할 일을 입력하세요');
+        }
+      });
+
+      //modify
+      btnMoElem.addEventListener('click', function () {
+        // alert('진짜수정!');
+
+        listView[inpNumElem.value].todo = inpElem.value;
+
+        //1 버튼 입력으로 변경
+        btnElem.style.display = 'block';
+        btnMoElem.style.display = 'none';
+        inpElem.value = '';
+        viewData();
+      });
+
+      //function
+      //read
+      function viewData() {
+        // localstorage
+        if (localStorage.length > 0) {
+          let lcalData = localStorage.getItem('todoData');
+          listView = JSON.parse(lcalData);
+        }
+
+        let viewData = '';
+        listView.forEach(function (item, i) {
+          viewData += `
+                <li class="d-flex justify-content-between py-3">
+                <div>${item.todo}</div>
+                <div class="d-flex gap-3">`;
+          //   if (item.done) {
+          //     viewData += `<i class="fa-solid fa-square-check " onclick="noDone(${i})"></i>`;
+          //   } else {
+          //     viewData += `<i class="fa-solid fa-square"  onclick="yesDone(${i})"></i>`;
+          //   }
+          if (item.done) {
+            viewData += `<i class="fa-solid fa-square-check " onclick="done(${i})"></i>`;
+          } else {
+            viewData += `<i class="fa-solid fa-square"  onclick="done(${i})"></i>`;
+          }
+          viewData += `
+                    
+                    <i class="fa-solid fa-pen" onclick="modi(${i},'${listView[i].todo}')"></i>
+                    <i class="fa-solid fa-trash" onclick="del(${i})"></i>
+                </div>
+                </li>
+            `;
+        });
+        viewDataElem.innerHTML = viewData;
+      }
+
+      viewData();
+
+      //delete
+      function del(index) {
+        alert(index);
+      }
+
+      //done
+      // function yesDone(index) {
+      //   console.log(index);
+      //   listView[index].done = true;
+      //   viewData();
+      // }
+
+      // function noDone(index) {
+      //   listView[index].done = false;
+      //   viewData();
+      // }
+
+      function done(index) {
+        listView[index].done = !listView[index].done;
+        viewData();
+      }
+
+      function modi(index, todo) {
+        // alert('수정' + todo);
+        inpElem.value = todo;
+        inpNumElem.value = index;
+        btnElem.style.display = 'none';
+        btnMoElem.style.display = 'block';
+      }
+
+      /*
+      개선방향
+      - done:true 이면 수정, 삭제금지
+      - done:true 이면 글자, 글자를 text-decoration:line-through
+      - done:false 원상복구
+      - 수정시 취소번튼 추가
+      - done 체크, todo title 수정, todo 삭제, 전체삭제, localStorage 반영
+      */
+    </script>
+  </body>
+</html>

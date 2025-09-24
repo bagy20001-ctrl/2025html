@@ -1,0 +1,72 @@
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.navbar {
+  background: rgb(219, 219, 219);
+  position: relative;
+  z-index: 9999;
+}
+
+h1 {
+  text-align: center;
+}
+
+.navbar .menu {
+  display: flex;
+  /* background: skyblue; */
+}
+.navbar .menu > li {
+  flex: 1 1 20%;
+  position: relative;
+  /* flex-grow: 1;
+  transition: 0.3s; */
+}
+/* .navbar .menu > li:hover {
+  flex-grow: 1.2;
+} */
+
+.navbar .menu > li a {
+  display: block;
+  /* background: pink; */
+  text-align: center;
+  padding: 10px 0;
+  transition: 0.3s;
+}
+.navbar .menu > li a:hover {
+  background: rgb(84, 84, 84);
+  color: white;
+}
+.navbar .menu > li:hover {
+  background: rgb(84, 84, 84);
+}
+.navbar .menu > li:hover a {
+  color: white;
+}
+
+.navbar .menu > li:hover .sub {
+  background: rgb(84, 84, 84);
+}
+
+.navbar .menu > li .sub {
+  display: none;
+  position: absolute;
+  /* background: pink; */
+  width: 100%;
+}
+
+/* .navbar .menu > li:nth-child(1) .sub {
+  display: block;
+} */
+
+.navbar ul.menu > li:hover .sub {
+  display: block;
+}
+
+.visual {
+  height: 400px;
+  background: skyblue;
+  position: relative;
+  z-index: 100;
+}
