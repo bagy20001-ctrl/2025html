@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오 임팩트 주니어 학교</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#"><img src="images/logo.png" alt="카카오 임팩트 로고"></a></li>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">프로그램 소개</a></li>
+                    <li><a href="#">지원하기</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="gallery">
+            <h2>갤러리</h2>
+            <div class="gallery-container">
+                <div class="slider">
+                    <img src="images/photo1.jpg" alt="갤러리 이미지 1" class="slide" />
+                    <img src="images/photo2.jpg" alt="갤러리 이미지 2" class="slide" />
+                    <img src="images/photo3.jpg" alt="갤러리 이미지 3" class="slide" />
+                </div>
+            </div>
+
+            <!-- 페이지 번호 및 진행 바 -->
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+                <div id="page-number">
+                    <span id="current-page">1</span> / <span id="total-pages">3</span>
+                </div>
+            </div>
+
+            <!-- 버튼 -->
+            <div id="controls">
+                <button id="prev-btn">이전</button>
+                <button id="next-btn">다음</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kakao Impact</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
