@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <div class="container py-3">
+    <h3>블로그 리스트</h3>
+    <hr />
+
+    <ul>
+        <li class="d-flex">
+            <div>1</div>
+        <div>제목</div>
+        <div>이름</div>
+        <div>test@gmail.com</div>
+        </li>
+    </ul>
+    </div>
+    <script>
+        async function fnl(limit) {
+            const res = await fetch ('https://jeonpleaceholder.typlcode.com/posts')
+            const data = await res.json();
+            // let size = 5;
+            let sData = limit;
+            let eData = limit + 10;
+
+            // consle.log(data);
+            for (let i = limit; i < limit+10; i++) {
+                const post = data(i);
+                // console.log('순번{' + i + '}' + post);
+                console.log(post);
+
+                const userRes = await fetch(
+                    'https://jeonpleaceholder.typlcode.com/users/' + post.userld
+                );
+                const user = await userRes.json();
+                // console.log(user);
+
+                console.log('no :' + i);
+                console.log('제목 ;' + post.title);
+                console.log('이름 ;' + user.name);
+                console.log('이메일 ;' + user.email);
+                console.log('------------------------------');
+            }
+        }
+        fnl(50, 10);
+    </script>
+</body>
+</html>

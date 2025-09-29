@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="error"></div>
+    <script>
+      function fn1() {
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+          .then(function (res) {
+            return res.json();
+          })
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch();
+      }
+      //   fn1();
+
+      async function fn2(id) {
+        try {
+          const res = await fetch(
+            `https://jsonplaceholder.typicode.com/todos/${id}`
+          );
+
+          if (!res.ok) {
+            console.log('자료전송실패');
+            throw new Error('http 오류! 상태코드 ' + res.status);
+          }
+
+          const data = await res.json();
+          console.log(data);
+        } catch (error) {
+          console.error('에러', error.message);
+
+          document.querySelector('.error').innerHTML = error.message;
+        }
+      }
+      //   fn2(201);
+
+      function fn3(id) {
+        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+          //   .then((res) => {
+          //     return res.json();
+          //   })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+      }
+      fn3(10);
+    </script>
+  </body>
+</html>
