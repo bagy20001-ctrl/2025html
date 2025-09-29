@@ -1,53 +1,74 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+      integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      ul,
+      li {
+        list-style: none;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
     <div class="container py-3">
-    <h3>블로그 리스트</h3>
-    <hr />
+      <h3>블로그 리스트</h3>
+      <hr />
 
-    <ul>
-        <li class="d-flex">
+      <ul>
+        <li class="d-flex flex-column flex-md-row justify-content-between">
+          <div class="d-flex gap-2">
             <div>1</div>
-        <div>제목</div>
-        <div>이름</div>
-        <div>test@gmail.com</div>
+            <div>제목</div>
+          </div>
+          <div class="d-flex align-self-end gap-2">
+            <div>이름</div>
+            <div>test@gmail.com</div>
+          </div>
         </li>
-    </ul>
+        <li><hr /></li>
+      </ul>
+      <div class="d-flex justify-content-end">
+        <div class="btn btn-primary">글쓰기</div>
+      </div>
     </div>
     <script>
-        async function fnl(limit) {
-            const res = await fetch ('https://jeonpleaceholder.typlcode.com/posts')
-            const data = await res.json();
-            // let size = 5;
-            let sData = limit;
-            let eData = limit + 10;
+      async function fn1(limit, size) {
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const data = await res.json();
+        // let size = 5;
+        let sData = limit;
+        let eData = limit + size;
 
-            // consle.log(data);
-            for (let i = limit; i < limit+10; i++) {
-                const post = data(i);
-                // console.log('순번{' + i + '}' + post);
-                console.log(post);
+        // console.log(data);
+        for (let i = sData; i < eData; i++) {
+          const post = data[i];
+          //   console.log('순번[' + i + ']:' + post);
+          //   console.log(post);
 
-                const userRes = await fetch(
-                    'https://jeonpleaceholder.typlcode.com/users/' + post.userld
-                );
-                const user = await userRes.json();
-                // console.log(user);
+          const userRes = await fetch(
+            'https://jsonplaceholder.typicode.com/users/' + post.userId
+          );
+          const user = await userRes.json();
+          //   console.log(user);
 
-                console.log('no :' + i);
-                console.log('제목 ;' + post.title);
-                console.log('이름 ;' + user.name);
-                console.log('이메일 ;' + user.email);
-                console.log('------------------------------');
-            }
+          console.log('no :' + i);
+          console.log('제목 :' + post.title);
+          console.log('이름 :' + user.name);
+          console.log('이메일 :' + user.email);
+          console.log('------------------------');
         }
-        fnl(50, 10);
+      }
+      fn1(50, 10);
     </script>
-</body>
+  </body>
 </html>
