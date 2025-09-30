@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <div class="container">
+      <h3>글내용보기</h3>
+      <hr />
+      <div>Number : <span class="num"></span></div>
+      <div>이름 : <span class="name"></span> / <span class="email"></span></div>
+      <div>타이틀 : <span class="title"></span></div>
+      <div>
+        <p>글내용</p>
+        <p class="content"></p>
+      </div>
+      <div class="d-flex justify-content-end">
+        <a class="btn btn-primary" href="fetch02.html">글리스트</a>
+      </div>
+    </div>
+
+    <script>
+
+        const params = new URLSearchParams(location.search);
+      console.log(typeof params.get('id'));
+      const id = Number(params.get('id'));
+      console.log(id);
+
+      async function view(postId) {
+        const viewData = await axios.get(
+          `https://jsonplaceholder.typicode.com/posts/${postId}`
+        );
+
+        console.log(viewData.data);
+        document.querySelector('.num').innerHTML = viewData.data.id;
+        document.querySelector('.title').innerHTML = viewData.data.title;
+        document.querySelector('.content').innerHTML = viewData.data.body;
+      }
+
+      view(id);
+
+    </script>
+</body>
+</html>
